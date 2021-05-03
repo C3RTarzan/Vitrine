@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("class/conexao.php");
-?>
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,10 +25,10 @@ include("class/conexao.php");
             <div class="button">
                 <div class="pai">
                     <div class="regiter">
-                        <a href="">Registro</a>
+                        <a href="/registro/index.php">Registro</a>
                     </div>
                     <div class="login">
-                        <a href="">Logar</a>
+                        <a href="../logar/logar.php">Logar</a>
                     </div>
                 </div>
             </div> 

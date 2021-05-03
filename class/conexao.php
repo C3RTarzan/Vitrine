@@ -3,7 +3,7 @@
 define('HOST', 'localhost');
 define('USUARIO', 'root');
 define('SENHA', '');
-define('BD', 'pinkuppers');
+define('BD', 'pet'); 
 
 $conexao = mysqli_connect(HOST, USUARIO, SENHA, BD) or die ('Não Conectou!!');
 
