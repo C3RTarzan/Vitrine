@@ -14,9 +14,9 @@ html, body {
 header .pai {
   width: 100%;
   height: 120px;
-  background-image: url(../img/bc6.jpg);
+  background: linear-gradient(0, #346fb3, #265a96);
   display: grid;
-  grid-template-columns: 1fr 6fr 3fr;
+  grid-template-columns: 1fr 6fr 1fr;
 }
 header .pai .img {
   position: relative;
@@ -24,10 +24,11 @@ header .pai .img {
   align-items: center;
   height: 120px;
   width: 100%;
+  margin-left: 20px;
 }
 header .pai .img img {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 80%;
 }
 header .pai .txt {
   display: flex;
@@ -36,52 +37,140 @@ header .pai .txt {
   padding: 0 0 0 10px;
 }
 header .pai .txt span {
-  color: whitesmoke;
-  font-size: 30px;
-  font-family: url("../fonts/logo.otf");
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 1px 1px 2px #727272;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  font-family: "Fascinate", cursive;
 }
 header .pai .button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+header .pai .button .acconts {
+  position: relative;
   display: flex;
   justify-content: center;
 }
-header .pai .button .pai {
+header .pai .button .acconts .iconAccont .iconify {
+  font-size: 60px;
+  cursor: pointer;
+}
+header .pai .button .acconts .navAccont {
+  position: absolute;
+  display: none;
+  top: 60px;
+  box-shadow: 0 0 1.5px black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .pai .button .acconts .navAccont nav {
+  display: flex;
+  flex-direction: column;
+  background: #2a2e3c;
+  width: 160px;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .pai .button .acconts .navAccont nav .header {
+  text-align: center;
+  font-size: 25px;
+  background: linear-gradient(0, #3b5ba5, #4d73cc);
+  height: 40px;
+  color: #F2F3F7;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .pai .button .acconts .navAccont nav .sections div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+header .pai .button .acconts .navAccont nav .sections div:hover {
+  background: linear-gradient(0, #3b5ba5, #4d73cc);
+}
+header .pai .button .acconts .navAccont nav .sections div:hover .iconify {
+  color: #F2F3F7;
+}
+header .pai .button .acconts .navAccont nav .sections div .iconify {
+  font-size: 20px;
+  width: 20px;
+  color: #1f6feb;
+}
+header .pai .button .acconts .navAccont nav .sections div span {
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F2F3F7;
+}
+header .pai .button .acconts .navAccont nav .sections .conta {
+  border-top: solid 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  margin: 20px 0 0 0;
+}
+header .pai .button .acconts .navAccont nav .sections .config {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+}
+header .pai .button .acconts .navAccont nav .sections .exit {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 45px;
+}
+header .pai .button .pai2 {
   position: relative;
   width: 200px;
-  height: 60px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .pai .button .pai div {
-  width: 30%;
-  height: 50%;
+header .pai .button .pai2 div {
+  width: 40%;
+  height: 35%;
   margin: 0 10px 0 10px;
 }
-header .pai .button .pai div a {
+header .pai .button .pai2 div a {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #119911;
+  background-color: #ff4949;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: solid 1px white;
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-header .pai .button .pai div a:hover {
-  background-color: yellowgreen;
+header .pai .button .pai2 div a:hover {
+  background-color: #5d9eff;
 }
 section {
   height: calc(100% - 120px);
 }
 section .pai {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 10% 80% 10%;
   height: 100%;
 }
 section .pai .search {
-  height: 100px;
-  background-color: #cccccc;
-  border-bottom: outset 2px rgba(0, 0, 0, 0.3);
+  height: 60px;
+  background: #dcfeff;
+  border-bottom: outset 2px rgba(0, 0, 0, 0.5);
+  border-top: outset 2px rgba(0, 0, 0, 0.3);
 }
 section .pai .search .buscar {
   height: 100%;
@@ -122,29 +211,76 @@ section .pai .search .buscar form div button:hover {
   cursor: pointer;
 }
 section .pai .nav {
-  background-color: #cccccc;
+  background-color: #dcfeff;
   height: 100%;
 }
 section .pai .nav .pec {
-  height: 100px;
+  height: 60px;
   width: 100%;
+  background: #dcfeff;
+  border-bottom: outset 2px rgba(0, 0, 0, 0.5);
+  border-top: outset 2px rgba(0, 0, 0, 0.3);
 }
-section .pai .nav .nav {
-  height: calc(100% - 100px);
+section .pai .nav .nav2 {
+  height: auto;
   width: 100%;
-  border-left: outset 2px rgba(0, 0, 0, 0.3);
-}
-section .pai .itens {
-  background-color: #ebebeb;
-  height: calc(100% - 100px);
-  padding: 30px;
   display: flex;
   justify-content: center;
 }
+section .pai .nav .nav2 .itensNav {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+section .pai .nav .nav2 .itensNav .div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+section .pai .nav .nav2 .itensNav nav {
+  cursor: pointer;
+  margin: 5px 0;
+  background-color: #21262d;
+  color: #e9e9e9;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+section .pai .nav .nav2 .itensNav nav span {
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+}
+section .pai .nav .nav2 .itensNav nav ul {
+  display: none;
+  flex-direction: column;
+  padding: 0;
+}
+section .pai .nav .nav2 .itensNav nav ul ul {
+  display: none;
+}
+section .pai .nav1 .pec {
+  border-bottom: outset 2px rgba(0, 0, 0, 0.5);
+  border-top: outset 2px rgba(0, 0, 0, 0.3);
+}
+section .pai .itens {
+  background: linear-gradient(0, #ffffff, #a6bfff);
+  height: calc(100% - 60px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  border-right: outset 2px rgba(0, 0, 0, 0.3);
+  border-left: outset 2px rgba(0, 0, 0, 0.3);
+}
 section .pai .itens .org {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 130px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
   grid-row-gap: 50px;
 }
 section .pai .itens .org .item {
@@ -153,6 +289,7 @@ section .pai .itens .org .item {
   height: 350px;
   padding: 5px;
   border: outset 2px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 section .pai .itens .org .item form {
@@ -189,6 +326,7 @@ section .pai .itens .org .item form .form .inffo .spn {
 }
 section .pai .itens .org .item form .form .inffo .spn span {
   margin: 2px 0 2px 0;
+  color: #181818;
 }
 section .pai .itens .org .item form .form .inffo .spn .star {
   display: flex;

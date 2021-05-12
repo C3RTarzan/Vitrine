@@ -23,10 +23,10 @@ session_start();
             <div class="formulario">
                 <form action="registro.php" method="post">
                     <div class="itens">
-                        <input id="nick" name="nick" type="text" placeholder="Usuário">
-                        <input id="email" name="email" type="email" placeholder="E-mail">
-                        <input id="password" name="senha" type="password" placeholder="Senha">
-                        <input id="password2" name="senha2" type="password" placeholder="Repetir Senha">
+                        <input id="nick" name="nick" type="text" placeholder="Usuário" autocomplete="nickname">
+                        <input id="email" name="email" type="email" placeholder="E-mail" autocomplete="email">
+                        <input id="password" name="senha" type="password" placeholder="Senha" autocomplete="new-password">
+                        <input id="password2" name="senha2" type="password" placeholder="Repetir Senha" autocomplete="password_verify">
                     </div>
                     <div class="button">
                         <a href="/login/index.php">Logar</a>
@@ -34,22 +34,9 @@ session_start();
                     </div> 
                     <div class="msg">
                         <?php
-                        if(isset($_SESSION['campos_branco'])): ?>
-                            <span>Verifique os campos!</span>
-                            <script src="verification.js"></script>
-                            <?php
-                                endif;
-                                unset($_SESSION['campos_branco']);
+                            include("erros.php")
                         ?>
-
-                        <?php
-                            if(isset($_SESSION['senhas'])): ?>
-                            <span>Verifique as senhas!</span>
-                            <script src="verificationpass.js"></script>
-                            <?php
-                                endif;
-                                unset($_SESSION['senhas']);
-                        ?>
+                        
                     </div>
                 </form>
             </div>

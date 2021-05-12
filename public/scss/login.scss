@@ -12,6 +12,10 @@ html, body{
     background-attachment: fixed;
     background-size: cover;
 }
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: rgb(243, 243, 243) !important;
+}
 section{
     height: 100%;
     .pai{
@@ -100,7 +104,18 @@ section{
                         color: rgba(232, 232, 232, 0.885);
                     }
                 }
-            }    
+            }  
+            .msg{
+                position: absolute;
+                top: 170px;
+                display: flex;
+                justify-content: center;
+                
+                width: 100%;
+                span{
+                    color: rgb(95, 17, 17);
+                }
+            }  
         }
         .logo{
             width: 280px;

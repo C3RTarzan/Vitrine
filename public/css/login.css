@@ -14,6 +14,11 @@ html, body {
   background-size: cover;
 }
 
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #f3f3f3 !important;
+}
+
 section {
   height: 100%;
 }
@@ -98,6 +103,16 @@ section .pai .form .recu a {
 }
 section .pai .form .recu a span {
   color: rgba(232, 232, 232, 0.885);
+}
+section .pai .form .msg {
+  position: absolute;
+  top: 170px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+section .pai .form .msg span {
+  color: #5f1111;
 }
 section .pai .logo {
   width: 280px;

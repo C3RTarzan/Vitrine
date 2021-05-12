@@ -12,6 +12,11 @@ html, body{
     background-attachment: fixed;
     background-size: cover;
 }
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: rgb(243, 243, 243) !important;
+}
+
 section{
     height: 100%;
     .pai{

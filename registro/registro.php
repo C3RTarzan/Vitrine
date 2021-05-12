@@ -14,12 +14,38 @@ if($_POST['senha'] !== $_POST['senha2']){
     exit();
 }
 
+
+
 $usuario =  mysqli_real_escape_string($conexao, trim($_POST['nick']));  // criando variavel
 $senha =  mysqli_real_escape_string($conexao, trim($_POST['senha']));  // criando variavel
+$senhamd5 = MD5($senha);
 $email =   mysqli_real_escape_string($conexao, trim($_POST['email']));  // criando variavel
-$query = "INSERT into user (nick, pass, email) VALUES ('$usuario', '$senha', '$email')"; //consulta com bd
-$result = mysqli_query($conexao, $query); //Inserir dado de Registro
-if($result == ''){
-    echo "<script language='javascript' type='text/javascript'>alert('O usuario não foi cadastrado!')</script>";
-} 
+$cargo = "user";
+$query = "INSERT into user (nick, pass, email, cargo) VALUES ('$usuario', '$senhamd5', '$email', '$cargo')"; //consulta com bd
+
+$queryuser = "SELECT * FROM user where nick = '$usuario'";
+$resultuser = mysqli_query($conexao, $queryuser);
+$rowuser = mysqli_num_rows($resultuser);
+
+$queryemail = "SELECT * FROM user where nick = '$usuario'";
+$resultemail = mysqli_query($conexao, $queryemail);
+$rowemail = mysqli_num_rows($resultemail);
+
+if(!$rowuser > 0){
+    if(!$rowemail > 0){
+        $result = mysqli_query($conexao, $query); //Inserir dado de Registro
+        $_SESSION['registered'] = true;
+        header('Location: /login/index.php');
+        exit();
+    }
+    $_SESSION['registered_email'] = true;
+    header('Location: ./index.php');
+    exit();
+}else{
+    $_SESSION['registered_user'] = true;
+    header('Location: ./index.php');
+    exit();
+}
+
+ 
 ?>
