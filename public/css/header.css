@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: 0;
+}
+
+header .pai {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(0, #346fb3, #265a96);
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+header .pai .img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+  margin-left: 20px;
+}
+header .pai .img img {
+  width: 60%;
+  height: 80%;
+}
+header .pai .txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 10px;
+}
+header .pai .txt span {
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 1px 1px 2px #727272;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  font-family: "Fascinate", cursive;
+}
+header .pai .button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+header .pai .button .acconts {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+header .pai .button .acconts .iconAccont .iconify {
+  font-size: 60px;
+  cursor: pointer;
+}
+header .pai .button .acconts .navAccont {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  top: 60px;
+  box-shadow: 0 0 1.5px black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .pai .button .acconts .navAccont nav {
+  display: flex;
+  flex-direction: column;
+  background: #2a2e3c;
+  width: 160px;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .pai .button .acconts .navAccont nav .header {
+  text-align: center;
+  font-size: 25px;
+  background: linear-gradient(0, #3b5ba5, #4d73cc);
+  height: 40px;
+  color: #F2F3F7;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .pai .button .acconts .navAccont nav .sections div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+header .pai .button .acconts .navAccont nav .sections div:hover {
+  background: linear-gradient(0, #3b5ba5, #4d73cc);
+}
+header .pai .button .acconts .navAccont nav .sections div:hover .iconify {
+  color: #F2F3F7;
+}
+header .pai .button .acconts .navAccont nav .sections div .iconify {
+  font-size: 20px;
+  width: 20px;
+  color: #1f6feb;
+}
+header .pai .button .acconts .navAccont nav .sections div span {
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F2F3F7;
+}
+header .pai .button .acconts .navAccont nav .sections .conta {
+  border-top: solid 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  margin: 20px 0 0 0;
+}
+header .pai .button .acconts .navAccont nav .sections .config {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+}
+header .pai .button .acconts .navAccont nav .sections .exit {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 45px;
+}
+header .pai .button .pai2 {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .pai .button .pai2 div {
+  width: 40%;
+  height: 35%;
+  margin: 0 10px 0 10px;
+}
+header .pai .button .pai2 div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ff4949;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: solid 1px white;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+header .pai .button .pai2 div a:hover {
+  background-color: #5d9eff;
+}
+
+/*# sourceMappingURL=header.css.map */
