@@ -11,7 +11,7 @@ if(empty($_POST['nick']) || empty($_POST['senha'])){ //checar se tem campos em b
 $usuario =  mysqli_real_escape_string($conexao, trim($_POST['nick']));  // criando variavel
 $senha =  mysqli_real_escape_string($conexao, trim($_POST['senha']));  // criando variavel
 $senhaMD5=MD5($senha);
-$query = "select * from user where nick = '$usuario' and pass = '$senha'"; //consulta com bd
+$query = "select * from user where nick = '$usuario' and pass = '$senhaMD5'"; //consulta com bd
 
 $result = mysqli_query($conexao, $query); // juntas os 2
 $dado = mysqli_fetch_array($result); // extrair dados da tabela sql

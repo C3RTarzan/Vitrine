@@ -1,6 +1,8 @@
 
 Gato(); 
-Cao(); 
+Cao();
+
+ 
 
 function Gato(){
     let AbrirMenu = 0

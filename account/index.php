@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../class/conexao.php");
+include("../class/userverefy.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,24 +12,43 @@ include("../class/conexao.php");
     <script src = "https://code.iconify.design/1/1.0.7/iconify.min.js"> </script>
     <script src="/public/js/nav.js"></script>
     <script src="/public/js/MenuIndex.js"></script>
+    
     <link rel="stylesheet" href="../public/css/account.css">
     <link rel="stylesheet" href="/">
     <title>Document</title>
 </head>
 <body>
 <?php
-    include "../header.php"
+    include "../header.php";
+    ?>
+    <?php
+        if(isset($_SESSION['id'])):
+            $id = $_SESSION['id'];
+            $query = "SELECT * FROM user where id = '$id'";
+            $result = mysqli_query($conexao, $query);
+            $dado = mysqli_fetch_array($result);
+            $img = $dado["img"];
+            $nick = $dado["nick"];
+            $email = $dado["email"]
+            // $_SESSION['id'] = $dado["id"];
+            // $_SESSION['nick'] = $dado["nick"];
+            // $_SESSION['email'] = $dado["email"];
+            // $_SESSION['cargo'] = $dado["cargo"];
+            // $_SESSION['img'] = $dado["img"];
     ?>
     <section>
         <div class="alfa">
             <div class="pai">
                 <div class="paimg">
                     <div class="img">
-                        <img src="https://carros.automobile.ao/uploads/avatars/blank.png" alt="">
+                        <img src="/public/account/<?php echo $img; ?>" alt="">
+                        <div class="editar">
+                            <span>EDITAR</span>
+                        </div>   
                     </div>
                 </div>
                 <div class="name">
-                    <span>Felipe Araújo</span>
+                    <span><?php echo $nick;?></span>
                 </div>
             </div>  
             <div class="pai2">
@@ -39,7 +59,7 @@ include("../class/conexao.php");
                     <span>Senha</span>
                 </div>
                 <div class="endereco">
-                    <span>Endereço</span>
+                    <span>Informações</span>
                 </div>
                 <div class="cartao">
                     <span>Cartão</span>
@@ -54,25 +74,59 @@ include("../class/conexao.php");
             </div>
             <div class="imgpai">
                 <div class="img">
-                    <img src="https://carros.automobile.ao/uploads/avatars/blank.png" alt="">
+                    <img src="/public/account/<?php echo $img; ?>" alt="">
                 </div>            
             </div>
             <div class="paiemail">
                 <div class="email">
-                    <span>Email@blabla.com</span>
+                    <span ><?php echo $email; ?></span>
                 </div>
                 <div class="salvar">
-                    <form action="" method="post">
+                    <form action="./email.php" method="post">
                         <div>
-                            <input type="text" placeholder="Novo E-mail"> 
+                            <input name="newemail" type="email" placeholder="Novo E-mail"> 
                         </div>
                         <div>
                             <button>Salvar</button>
+                        </div>
+                        <div class="error">
+                            <?php
+                            if(isset($_SESSION['erroemail'])): ?>
+                                <span>Esse E-Mail já esta em uso.</span>
+                                <?php
+                                    endif;
+                                    unset($_SESSION['erroemail']);
+                            ?>
+                            <?php
+                            if(isset($_SESSION['erroemailvazio'])): ?>
+                                <span>Verifique o E-Mail digitado.</span>
+                                <?php
+                                    endif;
+                                    unset($_SESSION['erroemailvazio']);
+                            ?>
+                            <?php
+                            if(isset($_SESSION['salveemail'])): ?>
+                                <span>Novo E-Mail salvo.</span>
+                                <?php
+                                    endif;
+                                    unset($_SESSION['salveemail']);
+                            ?>                     
                         </div>
                     </form>                
                 </div>
             </div>
         </div>
     </div>
+    <?php
+        endif;
+    ?>
 </body>
+    <script src="./click.js"></script>
+    <?php
+        if(isset($_SESSION['bc'])): ?>
+            <script src="./bc.js"></script>
+            <?php
+                endif;
+                unset($_SESSION['bc']);
+        ?>
 </html>

@@ -7,34 +7,50 @@
     <title>Document</title>
 </head>
 <body>
-<input class="campo" type="text">
-  <ul class="sugestoes"></ul>
-    <script>
-    function autoComplete(cidade) {
-        const destino = ['Salvador', 'Vitória', 'Maceió', 'Ceará','Rio Branco','Macapá', 'Porto Velho', 'Olinda','Aracaju','Capitólio','São Paulo', 'Paraty'];
-                return destino.filter((valor) => {
-                        const valorMinusculo = valor.toLowerCase()
-                        const cidadeMinusculo = cidade.toLowerCase()
-
-                        return valorMinusculo.includes(cidadeMinusculo)
-                })
+<?php 
+    session_start();
+?>
+<form action="" method="post">
+    <input type="text" name="escolha" placeholder="Quantia">
+    <button>Quantia</button><br><br>
+</form>
+<form action="" method="post">
+    <input type="text" name="buscar" placeholder="Buscar">
+    <button>Buscar</button><br><br>
+</form>
+<?php
+    if(!isset($_SESSION['quantia'])){
+        $_SESSION['quantia'] = 3;
+    }
+    if(!isset($_POST["escolha"])){
+        $_POST["escolha"] = $_SESSION['quantia'];
+    }
+    if(isset($_POST["escolha"])){
+        if($_POST["escolha"] == ''){
+            $_POST["escolha"] = 3;
         }
-        const campo = document.querySelector('.campo')
-        const sugestoes = document.querySelector('.sugestoes')
-
-        campo.addEventListener('input', ({ target }) => {
-            const dadosDoCampo = target.value
-            if(dadosDoCampo.length) {
-                const autoCompleteValores = autoComplete(dadosDoCampo)
-                sugestoes.innerHTML = `
-                    ${autoCompleteValores.map((value) => {
-                        return (
-                        `<li>${value}</li>`
-                                )
-                    }).join('')}
-                `
-            }
-    })
-    </script>
+        $_SESSION['quantia'] = $_POST["escolha"];
+    }
+    if(!isset($_POST["buscar"])){
+        $_POST["buscar"] = '';
+    }
+    $q = $_SESSION['quantia'];
+    if($_POST["buscar"] == ''){
+        echo "Números validos: <br>";
+        for($i = 1; $i <= $q; $i++){
+            echo "- " . $i . "<br>";
+        }
+    }
+    for($i = 1; $i <= $q; $i++){
+        if($_POST["buscar"] == $i){
+            echo "Número <span style='color: red;'>" . $i . "</span> Encontrado" . "<br>";
+        }
+    }
+    if($_POST["buscar"] > $_SESSION['quantia'] || $_POST["buscar"] == "0"){
+        echo "Erro, Numero " . $_POST["buscar"] . " é invalido!<br>";
+    }
+    
+    
+?>
 </body>
 </html>
