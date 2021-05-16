@@ -6,5 +6,5 @@ function redireCoordenador(){
     window.location.href = "/coordenador/index.php";
 }
 function redireAccont(){
-    window.location.href = "/accont/index.php";
+    window.location.href = "/account/index.php";
 }

@@ -1,0 +1,180 @@
+html, body {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+section {
+  background: linear-gradient(45deg, #4d2d4d, #1c0877);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+section .alfa {
+  background-color: rgba(92, 88, 88, 0.7);
+  border-radius: 10px;
+  border: outset 3px rgba(90, 90, 89, 0.75);
+  height: 80%;
+  width: 30%;
+}
+section .alfa div {
+  width: 100%;
+  height: 50%;
+}
+section .alfa .pai {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .alfa .pai .paimg {
+  display: flex;
+  height: 70%;
+  justify-content: center;
+}
+section .alfa .pai .paimg .img {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: black;
+  overflow: hidden;
+  padding: 5px 5px 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .alfa .pai .paimg .img img {
+  width: 100%;
+  height: 100%;
+}
+section .alfa .pai .name {
+  display: flex;
+  height: 30%;
+  justify-content: center;
+}
+section .alfa .pai .name span {
+  font-size: 30px;
+  font-weight: bold;
+}
+section .alfa .pai2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding: 30px;
+}
+section .alfa .pai2 div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  border: inset 0.5px;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+section .alfa .pai2 div:hover {
+  background-color: #a19f9f;
+}
+section .alfa .pai2 div span {
+  font-size: 25px;
+}
+
+.bc {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari 9+ */
+  backdrop-filter: blur(10px);
+  /* Chrome and Opera */
+}
+.bc .emailcontainer {
+  height: 60%;
+  width: 30%;
+  background-color: rgba(117, 117, 117, 0.404);
+  border: solid 0.5px;
+}
+.bc .emailcontainer .imgpai {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+}
+.bc .emailcontainer .imgpai .img {
+  transform: translateY(-50px);
+  width: 100px;
+  height: 100px;
+  background: #050505;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 10px 10px 0 10px;
+}
+.bc .emailcontainer .imgpai .img img {
+  width: 100%;
+  height: 100%;
+}
+.bc .emailcontainer .paiemail {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bc .emailcontainer .paiemail .email {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bc .emailcontainer .paiemail .email span {
+  font-size: 25px;
+  color: whitesmoke;
+  text-transform: lowercase;
+}
+.bc .emailcontainer .paiemail .salvar {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+}
+.bc .emailcontainer .paiemail .salvar form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bc .emailcontainer .paiemail .salvar form div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.bc .emailcontainer .paiemail .salvar form input {
+  width: 80%;
+  height: 30px;
+  padding: 0 0 0 8px;
+  font-size: 18px;
+}
+.bc .emailcontainer .paiemail .salvar form button {
+  width: 30%;
+  height: 30px;
+  margin-top: 30px;
+  border: none;
+  transition: all 200ms ease;
+}
+.bc .emailcontainer .paiemail .salvar form button:hover, .bc .emailcontainer .paiemail .salvar form button:focus {
+  transform: translateY(-1.5px);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 6px 7px rgba(0, 0, 0, 0.548);
+}
+
+/*# sourceMappingURL=account.css.map */
